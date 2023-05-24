@@ -1,10 +1,12 @@
 name: CI / CD for Angular
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,28 +21,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Lint
-        run: npm run lint
-
-#      - name: Tests
-#        run: npm run test:prod
-
-#      - name: Replace secret
-#        uses: cschleiden/replace-tokens@v1
-#        with:
-#          tokenPrefix: '{'
-#          tokenSuffix: '}'
-#          files: 'src/environments/environment.prod.ts'
-#        env:
-#          SECRET_API_KEY: ${{ secrets.API_KEY}}
-
       - name: Build
-        run: npm run build:prod
-
-      - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: main
-          build_dir: dist/angular-real-estate
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run build
