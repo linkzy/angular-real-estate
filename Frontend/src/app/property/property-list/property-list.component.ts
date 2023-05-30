@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 
 export class PropertyListComponent {
 
-  SellRent = 1;
+  SellRent = 1; //Default 1 => SellRent = 1 (Buy)
   Properties: Array<IProperty> = [];
 
   constructor(private housingSerivce: HousingService, private route: ActivatedRoute){
@@ -20,8 +20,9 @@ export class PropertyListComponent {
   }
 
   ngOnInit():void {
+    //If URL is empty (Homepage) list properties to Buy
     if(this.route.snapshot.url.toString()){
-      this.SellRent = 2;
+      this.SellRent = 2; // If URL is not empty (likely containing "rent-property") list houses to sell (SellRent = 2 (Sell))
     }
     this.housingSerivce.getAllProperties(this.SellRent).subscribe(
       data => {

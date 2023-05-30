@@ -15,7 +15,8 @@
   transform: scale(1,1);
   transition: 500ms;
   transition-timing-function: ease-out;
-  max-height: 250px;
+  height: 250px;
+
 }
 
 .member-icons{
