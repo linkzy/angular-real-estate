@@ -3,29 +3,29 @@
   "SellRent": 1,
   "Name": "House",
   "Type": "House",
-  "Price": 120000,
-  "Image": "house_default.png"
+  "Price": 120000
 },
 {
   "Id": 2,
-  "SellRent": 1,
+  "SellRent": 2,
   "Name": "Villa",
   "Type": "Villa",
-  "Price": 120000,
-  "Image": "house_default.png"
+  "Price": 200000,
+  "Image": "villa.png"
 },
 {
   "Id": 3,
   "SellRent": 2,
   "Name": "Apartment",
   "Type": "Apartment",
-  "Price": 120000,
-  "Image": "house_default.png"
+  "Price": 90000,
+  "Image": "apartment.png"
 },
 {
   "Id": 4,
-  "SellRent": 2,
+  "SellRent": 1,
   "Name": "Farm",
   "Type": "Farm",
-  "Price": 120000
+  "Price": 250000,
+  "Image": "farm.png"
 }]
